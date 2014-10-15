@@ -12,6 +12,35 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1 align="center">Iniciar Sesion</h1>
+        <form action="iniciar.do" method="post">
+            <table border="2" align="center">
+            <thead>
+                <tr>
+                    <th colspan="2">Iniciar Sesion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Run:</td>
+                    <td>
+                        <input type="text" placeholder="Rut:" name="txtRun" required="required"/> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pass:</td>
+                    <td>
+                        <input type="password" placeholder="Pass:" name="txtPass" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Iniciar Sesion"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+
     </body>
 </html>

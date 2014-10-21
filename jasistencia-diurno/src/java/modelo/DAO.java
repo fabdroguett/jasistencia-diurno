@@ -64,7 +64,7 @@ public class DAO {
     }
     
     public DAO() throws SQLException{
-        con = new Conexion("colegio", "28061995");
+        con = new Conexion("colegio", "123456");
     }
     
     public void crearAlumno(Alumno nuevo) throws SQLException{

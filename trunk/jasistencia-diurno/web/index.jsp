@@ -41,6 +41,6 @@
             </tbody>
         </table>
         </form>
-
+        <a href="menuadministrador.jsp">Acceder como Administrador</a>
     </body>
 </html>

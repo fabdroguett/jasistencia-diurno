@@ -8,11 +8,16 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.DAO;
+import modelo.Profesor;
 
 /**
  *
@@ -34,10 +39,29 @@ public class CrearDocente extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-          
-            String rut,nombre, appat,apmat,edad,pass;
+            DAO d=new DAO();
+            String rut,nombre, appat,apmat,pass,sx;
+            int edad;
             boolean sexo;
+            rut=request.getParameter("txtRunP");
+            nombre=request.getParameter("txtNombreP");
+            appat=request.getParameter("txtApePatP");
+            apmat=request.getParameter("txtApeMatP");
+            edad=Integer.parseInt(request.getParameter("txtEdadP"));
+            sexo=Boolean.parseBoolean(request.getParameter("opSexo"));
+            System.out.println(sexo);
+            if(sexo==true){
+                sx="m";
+            }else{
+                sx="f";
+            }
+            pass=request.getParameter("txtPassP");
+            Profesor p=new Profesor(rut, nombre, apmat, apmat, edad, sx, pass);
             
+            d.crearProfesor(p);
+            request.getRequestDispatcher("docente.view").forward(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(CrearDocente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

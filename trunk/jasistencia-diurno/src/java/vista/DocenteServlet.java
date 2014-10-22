@@ -41,56 +41,60 @@ public class DocenteServlet extends HttpServlet {
             out.println("<title>Servlet DocenteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            
-              out.println("<form action='creardocente.do' method='post'>");
-            out.println("<table border='1'>");
+            out.println("<form action='creardocente.do' method='post'>");
+            out.println("<table border='2'>");
+            out.println("<th colspan='2'>Registro de Profesores</th>");
             out.println("<tr>");
-            out.println("<td>Rut Docente:</td>");
-            out.println("<td><input type=\"text\" placeholder=\"Rut:\" name=\"txtrut\" required=\"required\"/></td>");
-             out.println("</tr>");
-             out.println("<tr>");
-            out.println("<td>Nombre Docente:</td>");
-            out.println("<td><input type=\"text\" placeholder=\"Nombre:\" name=\"txtnombre\" required=\"required\"/></td>");
-            
+            out.println("<td>Run:</td>");
+            out.println("<td>");
+            out.println("<input type='text' name='txtRunP' placeholder='Run de Profesor:' required='required'/>");
+            out.println("</td>");
             out.println("</tr>");
-            
+            out.println("<tr>");
+            out.println("<td>Nombre:</td>");
+            out.println("<td>");
+            out.println("<input type='text' name='txtNombreP' placeholder='Nombre de Profesor:' required='required'/>");
+            out.println("</td>");
+            out.println("</tr>");
+            out.println("<tr>");
             out.println("<td>Apellido Paterno:</td>");
-            out.println("<td><input type=\"text\" placeholder=\"Apellido P:\" name=\"txtappat\" required=\"required\"/></td>");
-            
+            out.println("<td>");
+            out.println("<input type='text' name='txtApePatP' placeholder='Apellido Paterno:' required='required'/>");
+            out.println("</td>");
             out.println("</tr>");
-            
+            out.println("<tr>");
             out.println("<td>Apellido Materno:</td>");
-            out.println("<td><input type=\"text\" placeholder=\"Apellido M:\" name=\"txtapmat\" required=\"required\"/></td>");
+            out.println("<td>");
+            out.println("<input type='text' name='txtApeMatP' placeholder='Apellido Materno:' required='required'/>");
+            out.println("</td>");
             out.println("</tr>");
-           
-            
-            out.println("<td>Edad Docente:</td>");
-            out.println("<td><input type=\"text\" placeholder=\"Edad:\" name=\"txtedad\" required=\"required\"/></td>");
+            out.println("<tr>");
+            out.println("<td>Edad:</td>");
+            out.println("<td>");
+            out.println("<input type='number' name='txtEdadP' placeholder='Edad de Profesor:' required='required'/>");
+            out.println("</td>");
             out.println("</tr>");
-               
-            out.println("<td>Sexo :</td>");
-            out.println("<td><input type=\"radio\" \n" +
-"                   name=\"radioSex\" \n" +
-"                   value=\"true\"\n" +
-"                   />Masculino\n" +
-"            <input type=\"radio\" \n" +
-"                   name=\"radioSex\" \n" +
-"                   value=\"false\"\n" +
-"                   />Femenino</td>");
+            out.println("<tr>");
+            out.println("<td>Clave:</td>");
+            out.println("<td>");
+            out.println("<input type='password' name='txtPassP' placeholder='Pass:' required='required'/>");
+            out.println("</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<td>Sexo:</td>");
+            out.println("<td>");
+            out.println("Masculino<input type='radio' value='true' name='opSexoP'/>");
+            out.println("Femenino<input type='radio' value='false' name='opSexoP'/>");
+            out.println("</td>");
             out.println("</tr>");
             
-             out.println("<td>Clave:</td>");
-            out.println("<td><input type=\"text\" placeholder=\"Pass:\" name=\"txtpass\" required=\"required\"/></td>");
-            out.println("</tr>");
-               
-            
-            
-            
-            out.println("<td colspan='3'><input type='submit' value=Crear Docente''></td>");
+            out.println("<tr>");
+            out.println("<td colspan='2'>");
+            out.println("<input type='submit' value='Registrar'/>");
+            out.println("</td>");
             out.println("</tr>");
             out.println("</table>");
             out.println("</form>");
-            
             out.println("</body>");
             out.println("</html>");
         }

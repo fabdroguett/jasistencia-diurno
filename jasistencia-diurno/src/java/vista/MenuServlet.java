@@ -39,7 +39,7 @@ public class MenuServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             DAO dao=new DAO();
             HttpSession session = request.getSession();
@@ -48,7 +48,8 @@ public class MenuServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MenuServlet</title>");            
+            out.println("<title>Servlet MenuServlet</title>");
+            out.println("<meta charset='UTF-8'/>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Bienvenido</h1>");

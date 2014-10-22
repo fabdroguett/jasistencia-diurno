@@ -48,7 +48,7 @@ public class CrearDocente extends HttpServlet {
             appat=request.getParameter("txtApePatP");
             apmat=request.getParameter("txtApeMatP");
             edad=Integer.parseInt(request.getParameter("txtEdadP"));
-            sexo=Boolean.parseBoolean(request.getParameter("opSexo"));
+            sexo=Boolean.parseBoolean(request.getParameter("opSexoP"));
             System.out.println(sexo);
             if(sexo==true){
                 sx="m";
@@ -56,7 +56,7 @@ public class CrearDocente extends HttpServlet {
                 sx="f";
             }
             pass=request.getParameter("txtPassP");
-            Profesor p=new Profesor(rut, nombre, apmat, apmat, edad, sx, pass);
+            Profesor p=new Profesor(rut, nombre, appat, apmat, edad, sx, pass);
             
             d.crearProfesor(p);
             request.getRequestDispatcher("docente.view").forward(request, response);

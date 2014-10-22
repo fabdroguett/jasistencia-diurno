@@ -3,30 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+
+package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import modelo.Curso;
-import modelo.DAO;
-import modelo.Profesor;
 
 /**
  *
- * @author Fabian
+ * @author Diego Soto
  */
-@WebServlet(name = "MenuServlet", urlPatterns = {"/menu.view"})
-public class MenuServlet extends HttpServlet {
+@WebServlet(name = "CerrarSesion", urlPatterns = {"/cerrar.do"})
+public class CerrarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,29 +34,11 @@ public class MenuServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            DAO dao=new DAO();
-            HttpSession session = request.getSession();
-            Profesor profe=(Profesor)session.getAttribute("profesor");
-            List<Curso> cursoProfe=dao.getCurso(profe.getRut());
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MenuServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Bienvenido</h1>");
-            out.println("<h3>Docente : "+profe.getNombre()+" "+profe.getApellidoPaterno()+" "+profe.getApellidoMaterno()+"</h3>");
-            out.println("<h5>Asignaturas</h5>");
-            for(Curso c  : cursoProfe){
-                out.println("<a href='asistencia.view?id="+c.getId()+"&nombre="+c.getNombre()+"'>"+c.getNombre()+"</a><br/>");
-            }
-            out.println("<a href='cerrar.do'>Cerrar Sesión</a></br>");
-            out.println("</body>");
-            out.println("</html>");
-        } catch (SQLException ex) {
-            Logger.getLogger(MenuServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+     response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        session.removeAttribute("profesor");
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

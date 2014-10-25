@@ -57,6 +57,7 @@ public class MenuServlet extends HttpServlet {
             out.println("<h5>Asignaturas</h5>");
             for(Curso c  : cursoProfe){
                 out.println("<a href='asistencia.view?id="+c.getId()+"&nombre="+c.getNombre()+"'>"+c.getNombre()+"</a><br/>");
+                
             }
             out.println("<a href='cerrar.do'>Cerrar Sesión</a></br>");
             out.println("</body>");

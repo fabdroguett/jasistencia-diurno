@@ -109,6 +109,10 @@ public class DAO {
     }
     
     public void pasarAsistencia(String idAlumno, String idCurso, Asistencia asi) throws SQLException{
+        System.out.println("insert into asistencia values(null, "
+                +"'"+idAlumno+"', '"+idCurso+"', "
+                + "NOW(), "+asi.isAsistio()+");");
+               
         con.insert("insert into asistencia values(null, "
                 + "'"+idAlumno+"', '"+idCurso+"', "
                 + "NOW(), "+asi.isAsistio()+");");

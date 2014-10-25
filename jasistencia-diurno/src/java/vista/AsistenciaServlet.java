@@ -16,7 +16,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Alumno;
+import modelo.Curso;
 import modelo.DAO;
 
 /**
@@ -39,11 +41,17 @@ public class AsistenciaServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String id=request.getParameter("id");
+            String idc =request.getParameter("id");
             String nombre=request.getParameter("nombre");
+            HttpSession session = request.getSession();
+            if (idc == null) {
+                Curso c=(Curso) session.getAttribute("curso");
+                idc=c.getId();
+                nombre=c.getNombre();
+            }
             DAO d=new DAO();
-            List<Alumno> alums=d.getAlumnos(id);
-            int c = 0;
+            List<Alumno> alums=d.getAlumnos(idc);
+            
 //            contador(c, alums);
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -60,19 +68,21 @@ public class AsistenciaServlet extends HttpServlet {
             out.println("<td>Nombre Completo:</td>");
             out.println("<td>Asistio:</td>");
             out.println("</tr>");
-            int i =0;
+            
             for(Alumno a: alums){
                 out.println("<tr>");
                 out.println("<td>"+a.getRut()+"</td>");
                 out.println("<td>"+a.getNombre()+" "+a.getApellidoPaterno()+" "+a.getApellidoMaterno()+"</td>");
-                out.println("<td><input type='checkbox' name='asis_"+c+"' value='"+a.getId()+"'></td>");
+                out.println("<td><input type='checkbox' name='"+a.getId()+"' value='"+a.getId()+"'></td>");
                 out.println("</tr>");
-                c++; // funda,mtpksdmlkj{flksdjklf jdf
+                
             }
             out.println("<tr>");
+            
             out.println("<td colspan='3'><input type='submit' value='Pasar Asistencia'></td>");
             out.println("</tr>");
             out.println("</table>");
+            session.setAttribute("curso", new Curso(idc, nombre));
             out.println("</form>");
             out.println("</body>");
             out.println("</html>");

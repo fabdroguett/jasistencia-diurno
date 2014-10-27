@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package controlador;
 
 import java.io.IOException;
@@ -21,10 +20,10 @@ import modelo.Profesion;
 
 /**
  *
- * @author Diego Soto
+ * @author Fabian
  */
-@WebServlet(name = "CrearProfesion", urlPatterns = {"/crearprofesion.do"})
-public class CrearProfesion extends HttpServlet {
+@WebServlet(name = "CrearProfesionServlet", urlPatterns = {"/crearProfesion.do"})
+public class CrearProfesionServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,21 +37,12 @@ public class CrearProfesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            response.setContentType("text/html;charset=UTF-8");
-            String nombrepro;
-            nombrepro= request.getParameter("txtProfesion");
-            Profesion newPro= new Profesion(nombrepro);
-            Profesion newProx = new Profesion(null, nombrepro);
-            DAO dao=new DAO();
-            
-            dao.crearProfesion(newProx);
-            
-            request.getRequestDispatcher("vista/ProfesionServlet.java").forward(request, response);
+            DAO d=new DAO();
+            d.crearProfesion(new Profesion(request.getParameter("txtNombreProfesion")));
+            request.getRequestDispatcher("crearprofesion.jsp").forward(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(CrearProfesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CrearProfesionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
         
     }
 

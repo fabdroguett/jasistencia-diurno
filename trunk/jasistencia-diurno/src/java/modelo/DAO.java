@@ -12,6 +12,7 @@ public class DAO {
     private Conexion con;
     private String select;
     
+    
     public static void main(String[] args) throws SQLException{
         DAO dao = new DAO();
 //        dao.crearAlumno(new Alumno("11-1", "Damian", "Riquelme", "Distinto", 20, "m"));
@@ -94,8 +95,11 @@ public class DAO {
     }
     
     public void asignarProfesion(String rutProfesor, String idProfesion) throws SQLException{
+        System.out.println("insert into profesion_profesor "
+                + "values(null, '"+rutProfesor+"','"+idProfesion+"');");
         con.insert("insert into profesion_profesor "
                 + "values(null, '"+rutProfesor+"','"+idProfesion+"');");
+        
     }
     
     public void crearCurso(Curso nuevo, String rutProfesor) throws SQLException{
@@ -332,5 +336,39 @@ public class DAO {
         
         con.sen.close();
         return pro;
+    }
+    public List<Profesor> cargarProfesor() throws SQLException{
+        List<Profesor> profesores=new ArrayList<Profesor>();
+        select="select * from profesor";
+        con.sen=con.con.createStatement();
+        con.rs=con.sen.executeQuery(select);
+        Profesor pro;
+        while(con.rs.next()){
+            pro = new Profesor(
+                    con.rs.getString("rut"), 
+                    con.rs.getString("nombre"), 
+                    con.rs.getString("ape_pat"),
+                    con.rs.getString("ape_mat"), 
+                    con.rs.getInt("edad"), 
+                    con.rs.getString("sexo")
+            );
+            profesores.add(pro);
+        }
+        con.sen.close();
+        return profesores;
+    }
+    public List<Profesion> cargarProfesion() throws SQLException{
+        List<Profesion> profesiones=new ArrayList<Profesion>();
+        select ="select * from profesion";
+        Profesion profesion;
+        
+        con.sen=con.con.createStatement();
+        con.rs=con.sen.executeQuery(select);
+        while(con.rs.next()){
+            profesion=new Profesion(con.rs.getString("id"),con.rs.getString("nombre"));
+            profesiones.add(profesion);
+        }
+        con.sen.close();
+        return profesiones;
     }
 }

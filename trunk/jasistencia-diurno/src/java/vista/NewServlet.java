@@ -7,27 +7,18 @@ package vista;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import modelo.Curso;
-import modelo.DAO;
-import modelo.Profesion;
-import modelo.Profesor;
 
 /**
  *
  * @author Fabian
  */
-@WebServlet(name = "MenuServlet", urlPatterns = {"/menu.view"})
-public class MenuServlet extends HttpServlet {
+@WebServlet(name = "NewServlet", urlPatterns = {"/NewServlet"})
+public class NewServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,48 +33,17 @@ public class MenuServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           DAO d=new DAO();
-            HttpSession session = request.getSession();
-            Profesor profe=(Profesor) session.getAttribute("profesor");
-            List<Curso> cursoProfe=d.getCurso(profe.getRut());
-            List<Profesion> profesiones=d.getProfesiones(profe.getRut());
-           out.println("<!DOCTYPE html>");
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<meta charset='utf-8'/>");
-            out.println("<link href='css/layout.css' rel='stylesheet' type='text/css'/>");
-            out.println("<link href='css/menu.css' rel='stylesheet' type='text/css'/>");
-            
+            out.println("<title>Servlet NewServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<ul id='nav'>");
-                out.println("<li><a href='#'>"+profe.getNombre()+"</a>");
-                    out.println("<ul>");
-                    for(Profesion profesion:profesiones){
-                        if("Ingenieria en informática".equals(profesion.getNombre())){
-                            out.println("<li><a href='#'>I.E.I</a></li>");   
-                        }else{
-                            out.println("<li><a href='#'>"+profesion.getNombre()+"</a></li>");
-                        }
-                    }
-                    out.println("</ul>");
-                out.println("</li>");
-                out.println("<li><a href=''>Asignaturas</a>");
-                out.println("<ul>");
-                for(Curso c:cursoProfe){
-                    out.println("<li><a href='asistencia.view?id="+c.getId()+"&nombre="+c.getNombre()+"$paso="+true+"'>"+c.getNombre()+"</a></li>");
-                }
-                out.println("</ul>");
-                out.println("</li>");
-                out.println("<li><a href='cerrar.do'>Cerrar Sesion</a></li>");
-            out.println("</ul>");
-            out.println("<script src='js/script.js'></script>");
+            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        } catch (SQLException ex) {
-            Logger.getLogger(MenuServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

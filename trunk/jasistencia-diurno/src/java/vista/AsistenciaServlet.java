@@ -44,10 +44,12 @@ public class AsistenciaServlet extends HttpServlet {
             String idc =request.getParameter("id");
             String nombre=request.getParameter("nombre");
             HttpSession session = request.getSession();
+            Boolean paso=false;
             if (idc == null) {
                 Curso c=(Curso) session.getAttribute("curso");
                 idc=c.getId();
                 nombre=c.getNombre();
+                paso=Boolean.parseBoolean(request.getParameter("paso"));
             }
             DAO d=new DAO();
             List<Alumno> alums=d.getAlumnos(idc);
@@ -73,7 +75,12 @@ public class AsistenciaServlet extends HttpServlet {
                 out.println("<tr>");
                 out.println("<td>"+a.getRut()+"</td>");
                 out.println("<td>"+a.getNombre()+" "+a.getApellidoPaterno()+" "+a.getApellidoMaterno()+"</td>");
-                out.println("<td><input type='checkbox' name='"+a.getId()+"' value='"+a.getId()+"'></td>");
+                if (paso == false) {
+                    out.println("<td><input type='checkbox' name='"+a.getId()+"' value='"+a.getId()+"'></td>");
+                }else{
+                    out.println("<td></td>");
+                }
+                
                 out.println("</tr>");
                 
             }

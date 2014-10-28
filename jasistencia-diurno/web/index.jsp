@@ -1,46 +1,31 @@
-<%-- 
-    Document   : index
-    Created on : 15-10-2014, 11:43:51
-    Author     : Fabian
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1 align="center">Iniciar Sesion</h1>
-        <form action="iniciar.do" method="post">
-            <table border="2" align="center">
-            <thead>
-                <tr>
-                    <th colspan="2">Iniciar Sesion</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Run:</td>
-                    <td>
-                        <input type="text" placeholder="Rut:" name="txtRun" required="required"/> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pass:</td>
-                    <td>
-                        <input type="password" placeholder="Pass:" name="txtPass" required="required"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" value="Iniciar Sesion"/>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </form>
-        <a href="menuadministrador.jsp">Acceder como Administrador</a>
-    </body>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Paper Stack</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<div class="container">
+	<section id="content">
+            <form action="iniciar.do" method="post">
+			<h1>Login Form</h1>
+			<div>
+				<input type="text" placeholder="Run" name="txtRun" required="required" id="username" />
+			</div>
+			<div>
+				<input type="password" name="txtPass"  placeholder="Password" required="required" id="password" />
+			</div>
+			<div>
+				<input type="submit" value="Iniciar" />
+                                <a href="menuadministrador.jsp">Acceder Administrador</a>
+ 			</div>
+		</form><!-- form -->
+		
+	</section><!-- content -->
+</div><!-- container -->
+</body>
 </html>

@@ -4,6 +4,7 @@
     Author     : Diego Soto
 --%>
 
+<%@page import="modelo.Profesor"%>
 <%@page import="modelo.Curso"%>
 <%@page import="java.util.List"%>
 <%@page import="modelo.Alumno"%>
@@ -28,6 +29,22 @@
                     </td>
                     <td>
                         <input type="text" name="txtNombreAsignatura" placeholder="Nombre Asignatura:" required="required"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Profesor:
+                    </td>
+                    <td>
+                        <select name="cboProfesorA">
+                    <%
+                        DAO d=new DAO();
+                        List<Profesor> profesor=d.cargarProfesor();
+                        for(Profesor p:profesor){
+                            out.println("<option value='"+p.getRut()+"'>"+p.getNombre()+" "+p.getApellidoPaterno()+" "+p.getApellidoMaterno()+"</option>");
+                        }
+                    %>
+                        </select>
                     </td>
                 </tr>
                 <tr>

@@ -14,5 +14,6 @@
     <body>
         <a href="docente.view">Crear Profesor</a>
         <a href="crearprofesion.jsp">Crear Profesion y Asignar Profesion</a>
+        <a href="crearAsignatura.jsp">Crear Asignatura y Asignar Asignatura</a>
     </body>
 </html>

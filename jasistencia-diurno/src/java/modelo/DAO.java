@@ -371,4 +371,41 @@ public class DAO {
         con.sen.close();
         return profesiones;
     }
+    
+     public List<Curso> cargarAsignatura() throws SQLException{
+        List<Curso> cursos=new ArrayList<Curso>();
+        select ="select * from curso";
+        Curso curso;
+        
+        con.sen=con.con.createStatement();
+        con.rs=con.sen.executeQuery(select);
+        while(con.rs.next()){
+            curso=new Curso(con.rs.getString("id"),con.rs.getString("nombre"));
+            cursos.add(curso);
+        }
+        con.sen.close();
+        return cursos;
+    }
+     
+      public List<Alumno> cargarAlumno() throws SQLException{
+        List<Alumno> alumnos=new ArrayList<Alumno>();
+        select="select * from alumno";
+        con.sen=con.con.createStatement();
+        con.rs=con.sen.executeQuery(select);
+        Alumno alu;
+        while(con.rs.next()){
+            alu = new Alumno(
+                    con.rs.getString("rut"), 
+                    con.rs.getString("nombre"), 
+                    con.rs.getString("ape_pat"),
+                    con.rs.getString("ape_mat"), 
+                    con.rs.getInt("edad"), 
+                    con.rs.getString("sexo")
+            );
+            alumnos.add(alu);
+        }
+        con.sen.close();
+        return alumnos;
+    }
+    
 }

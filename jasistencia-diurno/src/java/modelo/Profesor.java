@@ -5,6 +5,11 @@ public class Profesor {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+
+    public Profesor(String rut, String clave) {
+        this.rut = rut;
+        this.clave = clave;
+    }
     private int edad;
     private String sexo;
     private String clave;

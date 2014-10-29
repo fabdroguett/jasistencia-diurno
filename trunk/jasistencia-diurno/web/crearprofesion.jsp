@@ -81,5 +81,6 @@
             </table>
                 
         </form>
-    </body>
+    </body> 
+    <li><a href="menuadministrador.jsp">Volver</a>
 </html>

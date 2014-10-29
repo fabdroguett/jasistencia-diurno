@@ -16,10 +16,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
     <body>
         <form action="crearAsignatura.do" method="post">
-            <table border="1">
+            <table border="1" align="center">
                 <th colspan="2">
                     Crear Asignatura
                 </th>
@@ -55,8 +56,8 @@
             </table>
         </form>
         <form action="asignarcurso.do" method="post">
-            <table border="2">
-                <th>
+            <table border="2" align="center">
+                <th colspan="2">
                     Asignar Asignatura
                 </th>
                 <tr>
@@ -99,5 +100,6 @@
                 
         </form>
                          <li><a href="menuadministrador.jsp">Volver</a>
+                             <script src="js/script.js"></script>
     </body>
 </html>

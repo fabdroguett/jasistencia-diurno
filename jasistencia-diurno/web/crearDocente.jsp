@@ -13,6 +13,9 @@
         <link rel="stylesheet" type="text/css" href="css/registro.css"/>
     </head>
     <body background="images/bg.gif">
+        <div id="logo">
+            
+        </div>
         <form action="creardocente.do" method="post" class="dark-matter">
             <h1>Registro de Profesor
                 <span>Ingrese sus datos Por Favor</span>
@@ -38,20 +41,21 @@
                 <input type="number" name="txtEdadP" placeholder="Su Edad:"/>
             </label>
             <label>
-                <span>Sexo:</span>
-                Masculino:<input type="radio" name="opSexoP" value="true">
-                Femenino<input type="radio" name="opSexoP" value="false">
-            </label>
-            <label>
                 <span>Pass:</span>
                 <input type="password" name="txtPassP" placeholder="Su Pass:"/>
             </label>
             <label>
-                
-                <input type="submit" value="Registrar
-                       "/>
+                <span>Sexo:</span>
+                Masculino:<input type="radio" name="opSexoP" value="true"/>
+                Femenino:<input type="radio" name="opSexoP" value="false"/>
+            </label>    
+            <label align="center">
+                <input type="submit" value="Registrar" />
+            </label>
+            <label>
+                <a href="menuadministrador.jsp">Volver</a>
             </label>
         </form>
-         <li><a href="menuadministrador.jsp">Volver</a>
+         <script src="js/script.js"></script>
     </body>
 </html>

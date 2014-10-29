@@ -407,5 +407,30 @@ public class DAO {
         con.sen.close();
         return alumnos;
     }
-    
+    public Profesor existe(Profesor p){
+        if((!p.getRut().equalsIgnoreCase("123-4") &&
+                !p.getClave().equalsIgnoreCase("123") )){
+            
+            p.addError(new Error(3, "rut y Pass incorrecta"));
+            return p;
+        }else if(p.getRut().equalsIgnoreCase("123-4")){
+            
+            if(p.getClave().equalsIgnoreCase("123")){
+                
+                return new Profesor(p.getRut(),p.getClave());
+                
+            }else{
+             
+                Profesor newTeacher = new Profesor(p.getRut(), p.getClave());
+                newTeacher.addError(new Error(1, "Pass Incorrecta"));
+                return newTeacher;
+            }
+        }else{
+            
+            Profesor newTeacher = new Profesor(p.getRut(),p.getClave());
+            newTeacher.addError(new Error(2, "Rut Incorrecto"));
+            return newTeacher;
+        }
+        
+    }
 }

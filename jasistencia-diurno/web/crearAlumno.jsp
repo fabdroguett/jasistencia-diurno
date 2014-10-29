@@ -13,6 +13,9 @@
         <link rel="stylesheet" type="text/css" href="css/registro.css"/>
     </head>
     <body background="images/bg.gif">
+        <div id="logo">
+            
+        </div>
         <form action="crearalumno.do" method="post" class="dark-matter">
             <h1>Registro de Alumno
                 <span>Ingrese sus datos Por Favor</span>
@@ -45,10 +48,15 @@
             
             <label>
                 
-                <input type="submit" value="Registrar
-                       "/>
+                <input type="submit" value="Registrar"/>
+            </label>
+            <label>
+                <a href="menuadministrador.jsp" class="button">Volver</a>
             </label>
         </form>
-         <li><a href="menuadministrador.jsp">Volver</a>
+        <ul id="nav">
+            <li></li>
+        </ul>
+        <script src="js/script.js"></script>
     </body>
 </html>

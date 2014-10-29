@@ -11,8 +11,8 @@
 <body>
 <div class="container">
 	<section id="content">
-            <form action="iniciar.do" method="post">
-			<h1>Iniciar Sesion</h1>
+            <form action="ValidarAdmin.do" method="post">
+			<h1>Iniciar Sesion Administrador</h1>
 			<div>
 				<input type="text" placeholder="Run" name="txtRun" required="required" id="username" />
 			</div>
@@ -21,7 +21,7 @@
 			</div>
 			<div>
 				<input type="submit" value="Iniciar" />
-                                <a href="loginadministrador.jsp">Acceder Administrador</a>
+                                <a href="index.jsp">Volver</a>
  			</div>
 		</form><!-- form -->
 		

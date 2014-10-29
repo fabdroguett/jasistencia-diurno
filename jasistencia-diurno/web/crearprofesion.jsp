@@ -15,10 +15,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel='stylesheet' type='text/css' href='css/style.css'/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
     <body>
         <form action="crearProfesion.do" method="post">
-            <table border="1">
+            <table border="1" align="center">
                 <th colspan="2">
                     Crear Profesion
                 </th>
@@ -38,7 +39,7 @@
             </table>
         </form>
         <form action="asignarprofesion.do" method="post">
-            <table border="2">
+            <table border="2" align="center">
                 <th>
                     Asignar Profesion
                 </th>

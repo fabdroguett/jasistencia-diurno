@@ -111,11 +111,18 @@ public class Profesor {
         return "Profesor{" + "rut=" + rut + ", nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", edad=" + edad + ", sexo=" + sexo + ", clave=" + clave + '}';
     }
     
-    public boolean errorExist(){
-        return !errores.isEmpty();
-    }
- 
     public List<Error> getErrors() {
         return errores;
+    }
+
+    public void setErrors(List<Error> errors) {
+        this.errores = errors;
+    }
+  public void addError(Error error){
+        errores.add(error);
+    }
+    
+    public boolean errorExiste(){
+        return !errores.isEmpty();
     }
 }

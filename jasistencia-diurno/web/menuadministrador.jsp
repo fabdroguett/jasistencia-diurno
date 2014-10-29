@@ -22,8 +22,8 @@
             <li><a href="crearAsignatura.jsp">Crear Curso</a>
             </li>
             <li><a href="crearprofesion.jsp">Crear Profesion</a></li>
-            <li><a href="#">Asignar Profesion</a></li>
-            <li><a href="#">Asignar Curso</a></li>
+            <li><a href="crearprofesion.jsp">Asignar Profesion</a></li>
+            <li><a href="crearAsignatura.jsp">Asignar Curso</a></li>
         </ul>
         <script src="js/script.js"></script>
     </body>

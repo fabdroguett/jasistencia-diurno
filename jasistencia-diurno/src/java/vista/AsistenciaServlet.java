@@ -60,12 +60,13 @@ public class AsistenciaServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet AsistenciaServlet</title>"); 
             out.println("<meta charset=\"utf-8\">");
+            out.println("<link rel='stylesheet' type='text/css' href='css/style.css'>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>"+nombre+"</h1>");
             out.println("<h3> "+alums.size()+" Alumnos</h3>");
             out.println("<form action='pasar.do' method='post'>");
-            out.println("<table border='1'>");
+            out.println("<table border='1' align='center'>");
             out.println("<tr>");
             out.println("<td>Run:</td>");
             out.println("<td>Nombre Completo:</td>");
@@ -93,6 +94,7 @@ public class AsistenciaServlet extends HttpServlet {
             session.setAttribute("curso", new Curso(idc, nombre));
             out.println("</form>");
             out.println("<a href='menu.view'>Volver</a>");
+            out.println("<script src=\"js/script.js\"></script>");
             out.println("</body>");
             out.println("</html>");
         } catch (SQLException ex) {

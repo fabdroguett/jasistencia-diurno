@@ -91,6 +91,7 @@ public class AsistenciaServlet extends HttpServlet {
             out.println("</table>");
             session.setAttribute("curso", new Curso(idc, nombre));
             out.println("</form>");
+            out.println("<a href='menu.view'>Volver</a>");
             out.println("</body>");
             out.println("</html>");
         } catch (SQLException ex) {

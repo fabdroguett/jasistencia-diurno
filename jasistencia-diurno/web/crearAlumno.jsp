@@ -13,39 +13,36 @@
         <link rel="stylesheet" type="text/css" href="css/registro.css"/>
     </head>
     <body background="images/bg.gif">
-        <form action="creardocente.do" method="post" class="dark-matter">
-            <h1>Registro de Profesor
+        <form action="crearalumno.do" method="post" class="dark-matter">
+            <h1>Registro de Alumno
                 <span>Ingrese sus datos Por Favor</span>
             </h1>
             <label>
                 <span>Run:</span>
-                <input type="text" name="txtRunP" placeholder="Su Run:"/>
+                <input type="text" name="txtRunA" placeholder="Su Run:"/>
             </label>
             <label>
                 <span>Nombre:</span>
-                <input type="text" name="txtNombreP" placeholder="Su Nombre:"/>
+                <input type="text" name="txtNombreA" placeholder="Su Nombre:"/>
             </label>
             <label>
                 <span>Apellido Paterno:</span>
-                <input type="text" name="txtApePatP" placeholder="Su Apellido Paterno:"/>
+                <input type="text" name="txtApePatA" placeholder="Su Apellido Paterno:"/>
             </label>
             <label>
                 <span>Apellido Materno:</span>
-                <input type="text" name="txtApeMatP" placeholder="Su Apellido Materno:"/>
+                <input type="text" name="txtApeMatA" placeholder="Su Apellido Materno:"/>
             </label>
             <label>
                 <span>Edad:</span>
-                <input type="number" name="txtEdadP" placeholder="Su Edad:"/>
+                <input type="number" name="txtEdadA" placeholder="Su Edad:"/>
             </label>
             <label>
                 <span>Sexo:</span>
-                Masculino:<input type="radio" name="opSexoP" value="true">
-                Femenino<input type="radio" name="opSexoP" value="false">
+                Masculino:<input type="radio" name="opSexoA" value="true">
+                Femenino<input type="radio" name="opSexoA" value="false">
             </label>
-            <label>
-                <span>Pass:</span>
-                <input type="password" name="txtPassP" placeholder="Su Pass:"/>
-            </label>
+            
             <label>
                 
                 <input type="submit" value="Registrar

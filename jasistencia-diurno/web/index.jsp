@@ -12,7 +12,7 @@
 <div class="container">
 	<section id="content">
             <form action="iniciar.do" method="post">
-			<h1>AsisTor</h1>
+			<h1>Iniciar Sesion</h1>
 			<div>
 				<input type="text" placeholder="Run" name="txtRun" required="required" id="username" />
 			</div>
@@ -27,5 +27,6 @@
 		
 	</section><!-- content -->
 </div><!-- container -->
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -58,7 +58,8 @@ public class AsistenciaServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AsistenciaServlet</title>");            
+            out.println("<title>Servlet AsistenciaServlet</title>"); 
+            out.println("<meta charset=\"utf-8\">");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>"+nombre+"</h1>");

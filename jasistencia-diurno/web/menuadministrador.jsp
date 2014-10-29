@@ -17,7 +17,7 @@
         <ul id="nav">
             <li><a href="crearDocente.jsp">Crear Profesor</a>
             </li>
-            <li><a href="#">Crear Alumno</a>
+            <li><a href="crearAlumno.jsp">Crear Alumno</a>
             </li>
             <li><a href="crearAsignatura.jsp">Crear Curso</a>
             </li>

@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Profesor {
     private String rut;
     private String nombre;
@@ -9,10 +12,12 @@ public class Profesor {
     public Profesor(String rut, String clave) {
         this.rut = rut;
         this.clave = clave;
+        errores=new ArrayList<Error>();
     }
     private int edad;
     private String sexo;
     private String clave;
+    private List<Error> errores;
 
     public Profesor(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, int edad, String sexo, String clave) {
         this.rut = rut;
@@ -22,6 +27,7 @@ public class Profesor {
         this.edad = edad;
         this.sexo = sexo;
         this.clave = clave;
+        errores=new ArrayList<Error>();
     }
 
     public Profesor(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, int edad, String sexo) {
@@ -31,6 +37,7 @@ public class Profesor {
         this.apellidoMaterno = apellidoMaterno;
         this.edad = edad;
         this.sexo = sexo;
+        errores=new ArrayList<Error>();
     }
     
     
@@ -104,5 +111,11 @@ public class Profesor {
         return "Profesor{" + "rut=" + rut + ", nombre=" + nombre + ", apellidoPaterno=" + apellidoPaterno + ", apellidoMaterno=" + apellidoMaterno + ", edad=" + edad + ", sexo=" + sexo + ", clave=" + clave + '}';
     }
     
-    
+    public boolean errorExist(){
+        return !errores.isEmpty();
+    }
+ 
+    public List<Error> getErrors() {
+        return errores;
+    }
 }

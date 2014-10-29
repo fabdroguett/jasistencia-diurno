@@ -79,8 +79,9 @@
                     </td>
                 </tr>
             </table>
-                
+             <li><a href="menuadministrador.jsp">Volver</a>    
         </form>
+                        <script src="js/script.js"></script>
     </body> 
-    <li><a href="menuadministrador.jsp">Volver</a>
+   
 </html>

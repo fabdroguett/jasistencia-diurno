@@ -59,7 +59,7 @@ public class CrearDocente extends HttpServlet {
             Profesor p=new Profesor(rut, nombre, appat, apmat, edad, sx, pass);
             
             d.crearProfesor(p);
-            request.getRequestDispatcher("docente.view").forward(request, response);
+            request.getRequestDispatcher("crearDocente.jsp").forward(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(CrearDocente.class.getName()).log(Level.SEVERE, null, ex);
         }

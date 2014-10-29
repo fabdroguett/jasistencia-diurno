@@ -10,10 +10,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+        <link rel="stylesheet" type="text/css" href="css/layout.css"/>
     </head>
     <body>
-        <a href="docente.view">Crear Profesor</a>
-        <a href="crearprofesion.jsp">Crear Profesion y Asignar Profesion</a>
-        <a href="crearAsignatura.jsp">Crear Asignatura y Asignar Asignatura</a>
+        <ul id="nav">
+            <li><a href="crearDocente.jsp">Crear Profesor</a>
+            </li>
+            <li><a href="#">Crear Alumno</a>
+            </li>
+            <li><a href="crearAsignatura.jsp">Crear Curso</a>
+            </li>
+            <li><a href="crearprofesion.jsp">Crear Profesion</a></li>
+            <li><a href="#">Asignar Profesion</a></li>
+            <li><a href="#">Asignar Curso</a></li>
+        </ul>
+        <script src="js/script.js"></script>
     </body>
 </html>
